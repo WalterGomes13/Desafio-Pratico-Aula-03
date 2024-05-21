@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var saldo = 1000
+        while(true){
+            var opcao = parseInt(prompt("Digite a opção desejada\n\
+            1 - Ver Saldo \n\
+            2 - Fazer Saque \n\
+            3 - Fazer Depósito \n\
+            4 - Sair"))
+            if(opcao == 1){
+                alert(`Seu saldo é de: ${saldo} reais`)
+            }else if (opcao == 2){
+                var saque = parseFloat(prompt("Digite o valor a ser sacado: "))
+                if (saque >0 && saque <=saldo){
+                    saldo = saldo - saque
+                    alert(`DInheiro sacado com sucesso!\n\
+                    Seu saldo é de ${saldo} reais.`)
+                }else {
+                    alert('Valor inválido!')
+                }
+            }else if (opcao == 3){
+                var deposito = parseFloat(prompt("Digite o valor do depósito: "))
+                if (deposito>0){
+                    saldo = saldo + deposito
+                    alert(`Dinheiro depositado com sucesso!\n\
+                    Seu saldo é de ${saldo} reais`)
+                }
+                else {
+                    alert('Valor inválido! ')
+                }
+            }else if (opcao == 4){
+                break
+            }else {
+                alert("Opção inválida! ")
+            }
+        }
+        
+    </script>
+</body>
+</html>
